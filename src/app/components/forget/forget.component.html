@@ -1,0 +1,17 @@
+<div class="form_control">
+    <form [formGroup]="data">
+        <h1>Reset Password</h1>
+        <div>
+            <p style="text-align: left; color: black;"
+                [hidden]="!(data.controls.email.touched && data.controls.email.invalid)">Wrong email</p>
+            <input type="email" placeholder="email" formControlName="email">
+        </div>
+        <button (click)="reset()" [disabled]="data.invalid">Reset</button>
+    </form>
+</div>
+
+@if (authService.getHide()) {
+    <div id="loading" class="loading" >
+        <div class="spinner"></div>
+    </div>
+}

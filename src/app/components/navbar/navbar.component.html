@@ -1,0 +1,17 @@
+<div>
+    <nav>
+        <h2><a routerLink="/">codeWithOmair</a></h2>
+        <ul>
+            @if(!authservice.isAuthenticated()){
+                <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+            }
+            @if(!authservice.isAuthenticated()){
+                <li><a routerLink="/sign" routerLinkActive="active">Sign</a></li>
+            }
+            <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+            @if(authservice.isAuthenticated()){
+                <li (click)="authservice.logOut()"><a >Logout</a></li>
+            }
+        </ul>
+    </nav>
+</div>

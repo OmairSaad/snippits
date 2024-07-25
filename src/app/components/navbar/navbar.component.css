@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding:  30px 70px;
+    background-color: bisque;
+    text-align: center;
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+}
+ul li:hover{
+    cursor: pointer;
+}
+ul li{
+    list-style: none;
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+    font-size: 18px;
+}
+.active{
+   font-weight: bold;
+}

@@ -1,0 +1,29 @@
+<div class="form_control">
+
+    <form [formGroup]="newForm">
+        <h1>Plese Login</h1>
+        <div>
+            @if (email.touched && email.invalid) {
+            <p style="color: black; text-align: left;">Use correct email</p>
+            }
+            <input type="email" placeholder="Email" formControlName="email">
+        </div>
+        <div>
+            @if (password.touched && password.invalid) {
+            <p style="color: black; text-align: left;">Please use min 6 characters paswword</p>
+            }
+            <input type="password" placeholder="Password" formControlName="password">
+        </div>
+        <div>
+            <a routerLink="/reset">Forgot Password?</a>
+            <button (click)="save()" [disabled]="newForm.invalid" type="submit">Login</button>
+        </div>
+    </form>
+</div>
+
+@if (authService.getHide()) {
+    <div id="loading" class="loading" >
+        <div class="spinner"></div>
+    </div>
+}
+

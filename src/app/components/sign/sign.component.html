@@ -1,0 +1,25 @@
+<div class="form_control">
+
+    <form #fromData="ngForm" action="">
+        <h1>Plese Register</h1>
+        <div>
+            @if (email.touched && email.invalid) {
+            <p style="color: black; text-align: left;">Use correct email</p>
+            }
+            <input type="email" placeholder="Email"  #email="ngModel" name="email" ngModel required pattern="[A-Za-z0-9\._%+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,}">
+        </div>
+        <div>
+            @if (password.touched && password.invalid) {
+            <p style="color: black; text-align: left;">Please use min 6 characters paswword</p>
+            }
+            <input type="password" placeholder="Password" #password="ngModel" ngModel name="password" required minlength="6">
+        </div>
+        <button (click)="save(fromData)" [disabled]="fromData.invalid" type="submit">Register</button>
+    </form>
+</div>
+
+@if (authService.getHide()) {
+    <div id="loading" class="loading" >
+        <div class="spinner"></div>
+    </div>
+}

@@ -1,0 +1,19 @@
+<main>
+    <div class="container">
+        <h1>Create a Code Snippet</h1>
+        <form id="snippetForm" [formGroup]="code">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" formControlName="title"><br>
+
+            <label for="code">Code:</label>
+            <textarea id="code" name="code" rows="10" formControlName="code"></textarea><br>
+
+            <div class="buttons">
+                <button type="reset">Reset</button>
+                <button type="button" id="saveButton" (click)="save()" [disabled]="code.invalid">Save</button>
+            </div>
+        </form>
+        <p id="message" >Code Saved</p>
+    </div>
+<main>
+
