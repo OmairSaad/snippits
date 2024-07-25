@@ -20,8 +20,12 @@ code= new FormGroup({
     Validators.required
   ])
 })
-save(){
+savedCode:boolean=true;
+async save(){
   console.log(this.code.value);
-  this.dbService.create(this.code.value as sn);
+  this.savedCode=false;
+  await this.dbService.create(this.code.value as sn);
+  this.code.reset();
+  this.savedCode=true;
 }
 }
